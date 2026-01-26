@@ -1,0 +1,50 @@
+<%- include('./partials/header') %>
+<div class="w-[80%] flex m-5 FACCCA rounded-md">
+    <div class="w-[25%] h-[40%] rounded-md bg-[#FACCCA] overflow-hidden">
+        <div class="bg-[#FACCCA] flex justify-center">
+            <img src="./images/backpack.png" alt="">
+        </div>
+        <div class="bg-[#FAB5B1] h-[15%] flex items-center justify-start">
+            <h2 class="w-full px-3 py-2">Clinge Bag</h2>
+            <p class="w-full flex justify-end pr-3 text-2xl"><span>+</span> <span>   </span> <span>-</span></p>
+        </div>
+        <div class=" bg-[#E08E89] h-[20%] flex items-center justify-start"">
+            <h2 class="w-full pl-3 ">Net Total</h2>
+            <p class="w-full flex justify-end px-3 py-2 text-1xl">₹ 1200</p>
+        </div>
+    </div>
+    <div class="mx-5 w-[50%]">
+        <form action="">
+            <h1 class="text-xl mb-4">Price Breakdown</h1>
+            <div class="w-full mx-3">
+                
+            <div class="mb-1 w-full flex items-center">
+                <h4 class="w-full">Total MRP</h4>
+                <p class="w-full flex justify-between">₹ 1920</p>
+            </div>
+            <div class="mb-1 w-full flex items-center">
+                <h4 class="w-full">Discount on MRP</h4>
+                <p class="w-full flex justify-between">₹ 0</p>
+            </div>
+            <div class="mb-1 w-full flex items-center">
+                <h4 class="w-full">Platfrom Fee</h4>
+                <p class="w-full flex justify-between">₹ 20</p>
+            </div>
+            <div class="mb-1 w-full flex items-center">
+                <h4 class="w-full">Shipping Fee</h4>
+                <p class="w-full flex justify-between">₹ FREE</p>
+            </div>
+            
+            </div>
+            <p class="w-2/3 my-4 h-[1px] bg-[#DED0CC]"></p>
+            <div class="mb-1 w-full flex items-center">
+                <h4 class="w-full font-semibold">Total Amount</h4>
+                <p class="w-full flex justify-between ml-7">₹ 1940</p>
+            </div>
+            
+            <input class="text-white rounded-md mt-4 bg-zinc-900 px-5 py-2" type="submit" placeholder="Submit" value="Place Order" >
+        </form>
+        
+    </div>
+</div>
+<%- include('./partials/footer') %>
