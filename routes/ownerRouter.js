@@ -1,13 +1,9 @@
 const express=require('express');
 const router=express.Router();
-require('dotenv').config();
+// require('dotenv').config();
 const ownerModel=require("../models/owner-model");
-const {ownerCreated}=require("../controllers/ownerControllers");
+const {isLoggedIn}=require("../middlewares/isLoggedIn")
 
-
-console.log(process.env.NODE_ENV);
-
-// router.post("/create",ownerCreated);
 
 router.get("/",(req,res)=>{
     console.log("owner router");
@@ -15,35 +11,33 @@ router.get("/",(req,res)=>{
 })
 if(process.env.NODE_ENV==="development"){
     router.post("/create",async function(req,res){
-       // res.send("owner created");
-       try{
-
-        console.log(req.body.email);
-        console.log(req.body.password);
-        
-        let { email, password } = req.body;
-
-        console.log(email);
-        console.log(password);
-
-        res.send("owner created");
-        let createdOwner=new ownerModel.create({
-           
+        let owner=await ownerModel.find();
+        // if(owner.length>0) return res.status(503).send("owner already exists");
+        let { fullname,email, password } = req.body;
+        //console.log(fullname);
+        let createdOwner=await ownerModel.create({
+            fullname,
             email,
-            password
+            password,
         });
+        
         res.send(createdOwner);
-    }
-    catch(err){
-        res.send(err.message);
-    }
+
 
     })
 }
 
-router.get("/",(req,res)=>{
-    res.send("owner router");
-    console.log("owner home page");
+// router.get("/products",function(req,res){
+
+//     res.render("products");
+// });
+
+router.get("/admin",isLoggedIn,function(req,res){
+    let success=req.flash("success");
+    let error=req.flash("error");
+    let panel="Admin";
+    res.render("createProduct",{panel,error,success});
 });
+
 
 module.exports=router;

@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div class="h-[80px] pl-[20px] w-full flex items-center bg-[#F5F2F2]">
-        <div class="flex-start w-1/2 text-2xl">Admin Panel.</div>
-        <div class="w-1/2 flex justify-center gap-10">
-
-            <div class="flex gap-3">
-                <a class="ml-[20px]" href="">Home</a>
-                <a class="ml-[20px]" href="">Product</a>
-
-            </div>
-            <div class="flex-end gap-3">
-                <a class="ml-[20px]" href="">cart</a>
-                <a class="ml-[20px] tracking-tighter" href="">My Account</a>
+    <% if(success.length>0){ %>
+        <div class="absolute float-top text-center text-center w-full flex justify-center">
+            <div class="text-center bg-blue-500 px-5 py-2 rounded-[6px] ">
+                <%= success[0] %>
             </div>
         </div>
-    </div>
-    <h1 class="h-[1px] bg-zinc-900 w-full"></h1>
-    
+        <% } %>
+            <% if(error.length>0){ %>
+                <div class="absolute float-top text-center text-center w-full flex justify-center">
+                    <div class="text-center bg-red-500 px-5 py-2 rounded-[6px] ">
+                        <%= error[0] %>
+                    </div>
+                </div>
+                <% } %>
+                    <% var loggedin=typeof loggedin !=="undefined" ? loggedin : true %>
+                        <% if(loggedin){ %>
+                            <div class="h-[80px] pl-[20px] w-full flex flex-end items-center bg-[#F5F2F2]">
+
+                                <div class="flex-start w-[90%] text-2xl">
+                                    <%= panel %> Panel
+                                </div>
+                                <div class="w-1/2 flex flex-end justify-center items-center gap-10">
+
+                                    <div class="flex gap-3">
+                                        <a class="ml-[20px]" href="/shop">Shop</a>
+                                        <a class="ml-[20px]" href="/users/cart">Cart</a>
+
+                                    </div>
+                                    <div class="flex flex-end gap-3">
+                                        <a class="ml-[20px]" href="/owners/admin">Product</a>
+                                        <a class="ml-[20px] tracking-tighter" href="/users/logout">Logout</a>
+                                    </div>
+                                    <div>
+
+                                        <a href="/users/profile"><img class="w-[20%]" src="/images/profile-pic.png"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <% } %>
+                                <h1 class="h-[1px] bg-zinc-900 w-full"></h1>

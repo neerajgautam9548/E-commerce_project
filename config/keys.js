@@ -1,3 +1,3 @@
 {
-    JWT_SECRET_KEY:"neeraj8126"
+    JWT_SECRET_KEY:process.env.JWT_SECRET_KEY
 }

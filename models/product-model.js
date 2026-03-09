@@ -1,12 +1,16 @@
 const mongoose=require("mongoose");
 
 let productModel=mongoose.Schema({
-    image:String,
+    image:Buffer,
     name:String,
     price:Number,
     discount:{
         type:Number,
         default:0,
+    },
+    count:{
+        type:Number,
+        default:1,
     },
     bgcolor:String,
     panelcolor:String,

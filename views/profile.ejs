@@ -1,0 +1,72 @@
+<%- include('./partials/header') %>
+<div class="min-h-screen bg-gray-50 font-sans">
+  <!-- <nav class="flex items-center justify-between px-10 py-6 bg-white border-b border-gray-100">
+    <h1 class="text-3xl font-semibold tracking-tight">Profile Panel.</h1>
+    <div class="flex gap-8 text-sm font-medium">
+      <a href="/shop" class="hover:text-gray-500">shop</a>
+      <a href="/cart" class="hover:text-gray-500">Cart</a>
+      <a href="#" class="hover:text-gray-500 underline">My account</a>
+      <a href="#" class="hover:text-gray-500 flex items-center gap-1">
+        Cart <span class="bg-black text-white px-2 py-0.5 rounded-full text-[10px]">2</span>
+      </a>
+    </div>
+  </nav> -->
+
+  <main class="max-w-7xl mx-auto py-12 px-10 flex gap-12">
+    <aside class="w-1/4">
+      <div class="flex flex-col items-center p-8 bg-white rounded-lg shadow-sm border border-gray-100">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-gray-50">
+          <img src="/images/profile-pic.png" alt="" class="w-full h-full object-cover">
+        </div>
+        <h2 class="text-xl font-bold text-gray-800"><%= user.fullname %></h2> <p class="text-gray-500 text-sm mb-4"><%= user.email %></p> <button class="text-xs text-red-500 underline uppercase tracking-widest">Edit Profile</button>
+      </div>
+
+      <nav class="mt-8 flex flex-col gap-4 text-sm font-medium text-gray-600">
+        <a href="#" class="text-black border-l-2 border-black pl-4">Order History</a>
+        <a href="#" class="hover:text-black pl-4">Saved Addresses</a>
+        <a href="#" class="hover:text-black pl-4 text-red-600">Logout</a>
+      </nav>
+    </aside>
+    <!-- <section class="absolute ml-50 right-60  position-left w-[50%] h-[90%] bg-white text-gray-800 shadow-lg border-t-4 border-blue-500 shadow-lg">
+      <form action="">
+
+      </form>
+
+    </section> -->
+
+    <section class="flex-1">
+      <div class="grid grid-cols-2 gap-6">
+        
+        <div class="p-8 rounded-xl bg-[#F6E6E1] border border-gray-200">
+          <h3 class="text-xs uppercase tracking-widest text-gray-600 mb-6">Contact Details</h3>
+          <p class="text-2xl font-light text-gray-800">+1 234 567 890</p> </div>
+
+        <div class="p-8 rounded-xl bg-[#E1EBF6] border border-gray-200">
+          <h3 class="text-xs uppercase tracking-widest text-gray-600 mb-6">Total Orders</h3>
+          <p class="text-2xl font-light text-gray-800">12 Packages</p> </div>
+
+        <div class="col-span-2 mt-4">
+          <div class="flex justify-between items-end mb-6">
+            <h3 class="text-2xl font-semibold">In Your Cart</h3>
+            <a href="#" class="text-blue-600 text-xs underline">View Full Cart</a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6">
+            <div class="bg-white group cursor-pointer">
+              <div class="aspect-square bg-[#E8E8E8] flex items-center justify-center overflow-hidden">
+                <img src="https://via.placeholder.com/200" class="group-hover:scale-105 transition-transform">
+              </div>
+              <div class="p-4 bg-[#F5F5F5]">
+                <h4 class="font-medium">Clinge Bag</h4>
+                <div class="flex justify-between items-center mt-1">
+                   <p class="text-gray-500 text-sm">₹ 1200</p>
+                   <p class="text-[10px] bg-white px-2 py-1 rounded">Qty: 1</p> </div>
+              </div>
+            </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>

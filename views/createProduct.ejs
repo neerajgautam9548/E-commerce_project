@@ -1,38 +1,48 @@
 <%- include('./partials/header') %>
-<div class="flex w-full h-[100vh] overflow-hidden">
-    <div class="w-1/5 ml-5 mt-5 flex-col justify-center">
-        <p class="text-zinc-500 mb-5">All Products</p>
-        <p>Create New Product</p>
-    </div>
-    <div class="flex-start pt-[50px] items-space-between min-h-screen w-full">
-        <h1 class="text-2xl mb-5">Create New Product</h1>
-        <p class="h-[1px] bg-[#DED0CC]"></p>
-        <h2 class="text-xl my-5 w-full">Product Details</h2>
-        <form action="" class="flex-col">
-            <label class=" font-semibold ">Product Details</label>
-            <input class="bg-blue-500 rounded ml-5" type="file" value="Product Image" placeholder="select file">
-            
-        <div class="flex-col flex-wrap py-2 w-full">
-
-            <input class="bg-[#F0EDED] px-3 py-2 mt-4 rounded-md text-black  block" type="text" value="" placeholder="Product Name">
-            <input class="bg-[#F0EDED] px-3 py-2 mt-4 rounded-md text-black " type="text" value="" placeholder="Product Price">
-            <input class="bg-[#F0EDED] px-3 py-2 mt-4 rounded-md text-black mx-2" type="text" value="" placeholder="Discount Price">
-        </div>
-        <div class="flex flex-col justify-start min-h-screen mt-[100px]">
-
-            <h2 class="text-xl">Panel Details</h2>
-             <div class="flex-col flex-wrap py-2 w-full">
-
-            <input class="bg-[#F0EDED] px-3 py-2 my-4 rounded-md text-black" type="text" value="" placeholder="Product Name">
-            <input class="bg-[#F0EDED] px-3 py-2 rounded-md text-black" type="text" value="" placeholder="Product Price">
-            <input class="bg-[#F0EDED] px-3 py-2 rounded-md text-black block" type="text" value="" placeholder="Discount Price">
-            <input type="submit" class="bg-blue-500 rounded-md text-white border-none mt-10 px-3 py-2" value="Upload">
-        </div>
-        </div>
-
-    </form>
+    <div class="flex w-full h-[100vh] overflow-hidden">
         
-    </div>
-</div>
+                <div class="w-1/5 ml-5 mt-5 flex-col justify-center">
+                    <p class="text-zinc-500 mb-5">All Products</p>
+                    <p>Create New Product</p>
+                </div>
+                <div class="flex-start pt-[50px] items-space-between min-h-screen w-full">
+                    <h1 class="text-2xl mb-5">Create New Product</h1>
+                    <p class="h-[1px] bg-[#DED0CC]"></p>
+                    <h2 class="text-xl my-5 w-full">Product Details</h2>
+                    <form autocomplete="off" action="/products/create" method="post" class="flex-col" enctype="multipart/form-data" >
+                        <label class=" font-semibold ">Product Details</label>
+                        <input class="bg-blue-500 rounded ml-5" type="file" value="Product Image"
+                            placeholder="select file" name="image">
 
-<%- include('./partials/footer') %>
+                        <div class="flex-col flex-wrap py-2 w-full">
+
+                            <input class="bg-[#F0EDED] px-3 py-2 mt-4 rounded-md text-black  block" type="text" value=""
+                                placeholder="Product Name" name="name">
+                            <input class="bg-[#F0EDED] px-3 py-2 mt-4 rounded-md text-black " type="text" value=""
+                                placeholder="Product Price" name="price">
+                            <input class="bg-[#F0EDED] px-3 py-2 mt-4 rounded-md text-black mx-2" type="text" value=""
+                                placeholder="Discount Price" name="discount">
+                        </div>
+                        <div class="flex flex-col justify-start min-h-screen mt-[100px]">
+
+                            <h2 class="text-xl">Panel Details</h2>
+                            <div class="flex-col flex-wrap py-2 w-full">
+
+                                <input class="bg-[#F0EDED] px-3 py-2 my-4 rounded-md text-black" type="text"
+                                    placeholder="Background Color" name="bgcolor">
+                                <input class="bg-[#F0EDED] px-3 py-2 rounded-md text-black" type="text"
+                                    placeholder="Panel Color" name="panelcolor">
+                                <input class="bg-[#F0EDED] px-3 py-2 rounded-md text-black block" type="text"
+                                    placeholder="Text Color" name="textcolor">
+                                <input type="submit"
+                                    class="bg-blue-500 rounded-md text-white border-none mt-10 px-3 py-2"
+                                    value="Upload">
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+    </div>
+
+    <%- include('./partials/footer') %>
